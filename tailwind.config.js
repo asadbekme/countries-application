@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -19,14 +20,6 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif']
       }
     },
-    screens: {
-      xs: '375px',
-      sm: '576px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      xxl: '1536px'
-    }
   },
   plugins: [],
 }
