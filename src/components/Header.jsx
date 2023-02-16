@@ -1,23 +1,57 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { options } from "../utils/options";
 import { styles } from "../utils/styles";
 
 const Header = () => {
+  const [theme, setTheme] = useState("light");
+
+  // * if local storage is empty save theme as light
+  useEffect(() => {
+    if (localStorage.getItem("theme") === null) {
+      localStorage.setItem("theme", "light");
+    }
+  }, []);
+
+  useEffect(() => {
+    // * select html element
+    const html = document.querySelector("html");
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+      setTheme("dark");
+    } else {
+      html.classList.remove("dark");
+      setTheme("light");
+    }
+  }, [theme]);
+
+  // * handle switch theme
+  const handleThemeSwitch = () => {
+    if (localStorage.getItem("theme") === "light") {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
   return (
-    <header className="header sticky top-0 z-[99]">
-      <div className="container mx-auto p-4">
+    <header className="header w-full sticky top-0 z-[99] dark:bg-darkBlue shadow-md">
+      <div className="container mx-auto p-5">
         <div className={`${styles.flexBetween}`}>
-          <Link to={"/"}>Where in the world?</Link>
-          <div>
-            {options?.map((option) => (
-              <button
-                key={option.text}
-                className="w-8 h-8 leading-9 text-xl rounded-full m-1 text-sky-700"
-              >
-                <ion-icon name={option.icon}></ion-icon>
-              </button>
-            ))}
-          </div>
+          <Link to={"/"} className="font-nunitoSans font-bold text-2xl">
+            Where in the world?
+          </Link>
+          <button
+            onClick={handleThemeSwitch}
+            className="text-xl w-8 h-8 rounded-full leading-9"
+          >
+            {theme === "light" ? (
+              <ion-icon name="moon"></ion-icon>
+            ) : (
+              <ion-icon name="sunny"></ion-icon>
+            )}
+          </button>
         </div>
       </div>
     </header>

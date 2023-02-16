@@ -18,6 +18,9 @@ module.exports = {
       fontFamily: {
         nunitoSans: ["Nunito Sans", 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif']
+      },
+      boxShadow: {
+        'md': '0px 2px 4px rgb(0 0 0 / 6%)',
       }
     },
   },

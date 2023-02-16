@@ -7,8 +7,8 @@ export const options = [
     icon: 'moon',
     text: 'dark'
   },
-  // {
-  //   icon: 'desktop-outline',
-  //   text: 'system'
-  // }
+  {
+    icon: 'desktop-outline',
+    text: 'system'
+  }
 ];
