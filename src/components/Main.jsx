@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiURL } from "../utils/api";
+import { Country } from "./";
 
 const Main = () => {
   const [countries, setCountries] = useState([]);
@@ -42,25 +43,9 @@ const Main = () => {
             <option value="Oceania">Oceania</option>
           </select>
         </div>
-        <div className="grid grid-cols-4 gap-8 countries my-10">
-          {countries.map((country, idx) => {
-            return (
-              <div className="country" key={idx}>
-                <div className="country__image w-[280px] h-[200px]">
-                  <img
-                    src={country.flags.png}
-                    alt={country.flags.alt}
-                    className="w-[100%] h-[100%] object-cover"
-                  />
-                </div>
-                <div className="country__info">
-                  <h1 className="country__name">{country.name.official}</h1>
-                  <h4 className="country__population">{country.population}</h4>
-                  <h4 className="country__region">{country.region}</h4>
-                  <h4 className="country__capital">{country.capital}</h4>
-                </div>
-              </div>
-            );
+        <div className="countries grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-10">
+          {countries.map((country, index) => {
+            return <Country key={index} country={country} />;
           })}
         </div>
       </div>
