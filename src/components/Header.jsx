@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header className="header w-full sticky top-0 z-[99] dark:bg-darkBlue shadow-md">
-      <div className="container mx-auto p-5">
+      <div className="container mx-auto p-7">
         <div className={`${styles.flexBetween}`}>
           <Link to={"/"} className="font-nunitoSans font-bold text-2xl">
             Where in the world?
