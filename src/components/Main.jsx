@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiURL } from "../utils/api";
-import { Country } from "./";
+import { CountryItem } from "./";
 
 const Main = () => {
   const [countries, setCountries] = useState([]);
@@ -9,7 +9,6 @@ const Main = () => {
     try {
       const response = await fetch(`${apiURL}/all`);
       const data = await response.json();
-      console.log(data);
       setCountries(data);
     } catch (error) {
       console.log(error.message);
@@ -45,7 +44,7 @@ const Main = () => {
         </div>
         <div className="countries grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-10">
           {countries.map((country, index) => {
-            return <Country key={index} country={country} />;
+            return <CountryItem key={index} country={country} />;
           })}
         </div>
       </div>

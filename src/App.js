@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Country, Footer, Header, Main } from './components';
+import { CountryDetail, Footer, Header, Main } from './components';
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/country/:slug" element={<Country />} />
+        <Route path="/country/:slug" element={<CountryDetail />} />
       </Routes>
       <Footer />
     </div>
