@@ -20,7 +20,7 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="main w-full mt-5">
+    <main className="main w-full mt-5 min-h-[100vh]">
       <div className="container mx-auto p-7">
         <div className="flex flex-col md:flex-row md:justify-between">
           <input

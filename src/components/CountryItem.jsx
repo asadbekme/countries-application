@@ -6,7 +6,7 @@ const CountryItem = ({ country }) => {
       <div className="country bg-white dark:bg-darkBlue rounded-md shadow-md">
         <div className="country__image w-full h-[200px] rounded-md">
           <img
-            src={country.flags.png}
+            src={country.flags.svg}
             alt={country.flags.alt}
             className="w-[100%] h-[100%] object-cover"
           />
